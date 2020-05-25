@@ -1,8 +1,8 @@
-import numpy as np
 import pandas as pd
-import math
 import matplotlib.pyplot as plt
-from Plotter import Plotter
+import sys
+sys.path.append('../')
+from src.Plotter import Plotter
 
 class ScatterPlotter(Plotter):
     def __init__(self, y, y_pred):

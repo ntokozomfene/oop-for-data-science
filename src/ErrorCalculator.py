@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 class ErrorCalculator:
     
     def __init__(self, y, y_pred):
-        import numpy as np
         self.y= np.array(y)
         self.y_pred= np.array(y_pred)
         self.size= len(y)
@@ -18,17 +17,12 @@ class ErrorCalculator:
             raise ValueError(f'damn bro. size {self.y} and {self.y_pred}')
             
     def get_residuals(self):
-        #for each in self.y:
-        #    total_res= self.y_pred- self.y
-        #return total_res
         return self.y_pred- self.y
     
     
     def get_standardised_residuals(self):
         resids= self.get_residuals()
         self.std_resids= self.standard_scaler(resids)
-        #self.std_y_pred=  self.standard_scaler(self.y_pred)
-        #return self.std_y, self.std_y_pred
         return self.std_resids
         
     

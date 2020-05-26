@@ -7,6 +7,11 @@ class Plotter:
         self.y= y
         self.y_pred = y_pred
 
+        if residuals is None:
+            self.residuals = self.run_calculations()
+        else:
+            self.residuals = residuals
+
     def run_calculations(self):
         resids= np.array(self.y)- np.array(self.y_pred)
         return resids
